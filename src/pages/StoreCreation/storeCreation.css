@@ -1,0 +1,33 @@
+.store-creation-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;    
+}
+.progress-indicator-container{
+    display: flex;
+    flex: 1;
+    border-width: 1px;
+    border-color: rgb(44, 27, 23);
+    border-style: solid;
+    justify-content: space-between;
+}
+.form-container{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.store-creation-form{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-direction: column;
+}
+.main-store-creation-container{
+    display: flex;
+    flex: 10;
+}
+.side-area{
+    flex: 1;
+    display: flex;
+}
