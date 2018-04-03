@@ -6,9 +6,6 @@ import {
 } from '../../components/';
 import './settings.css'
 
-import $ from "jquery";
-import resizeLogger from '../../services/logger'
-
 const settingCards = [{ title: 'Products Settings', url: '/products-settings' }, { title: 'Payments Settings', url: '/payment-settings' },
 { title: 'General Settings', url: '/general-settings' }, { title: 'Store Settings', url: '/store-settings' }]
 class Settings extends Component {
@@ -17,12 +14,7 @@ class Settings extends Component {
         this.state = {}
         this.email = 'dudi seting'
     }
-
-    componentDidMount() {
-        console.log('componentDidMount Settings page')
-        // $(window).off("resize", resizeLogger.bind(this));        
-    }
-
+   
     handleCardClick = (url) => {
         this.props.history.push(url);
     }

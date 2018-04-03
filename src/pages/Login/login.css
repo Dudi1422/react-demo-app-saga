@@ -42,3 +42,12 @@
     font-weight: bold;
     height: 1px;
 }
+.create-account{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: rgb(44, 9, 241);
+    margin-top: 18px;
+}

@@ -11,6 +11,12 @@ export default {
         ok: true,
         data: '' //require('../Fixtures/mockSchoolsApi.json')
       }
-    },   
+    }, 
+    createStore: (storeData) => {
+      return {
+        ok: true,
+        data: ''
+      }
+    },  
   }
   

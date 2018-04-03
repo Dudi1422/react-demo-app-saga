@@ -2,6 +2,7 @@
 import apisauce from 'apisauce'
 
 const USERS_RESOURCE = 'users';
+const STORES_RESOURCE = 'stores';
 
 // our "constructor"
 const create = (baseURL = 'http://localhost:3001/') => {
@@ -43,7 +44,9 @@ const create = (baseURL = 'http://localhost:3001/') => {
 
   const getUserByEmail = (email) => api.get(USERS_RESOURCE, {email: email})
   const login = (email, password) => api.get('login', {...{email}, ...{password}})
-
+  const createStore = (storeData) => api.post(STORES_RESOURCE, [storeData])
+  const getUserStore = (userId) => api.get(`${USERS_RESOURCE}\\${userId}\\${STORES_RESOURCE}`)
+  const createUser = (user) => api.post(USERS_RESOURCE, [user])
   // ------
   // STEP 3
   // ------
@@ -59,7 +62,10 @@ const create = (baseURL = 'http://localhost:3001/') => {
   return {
     getQuizzes,
     getUserByEmail,
-    login   
+    login,
+    createStore,
+    getUserStore,
+    createUser
   }
 }
 

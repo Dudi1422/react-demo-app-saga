@@ -17,7 +17,7 @@ export default (state = INITIAL_STATE, action) => {
         case actionTypes.LOG_IN_SUCCESS:
             return {
                 ...state, isLogedIn: true, errorMessage: null, email: action.payload.email, isLoading: false,
-                     userName: action.payload.userName, hasStore: action.payload.hasStore,
+                     userName: action.payload.userName, hasStore: action.payload.hasStore, userId: action.payload.userId,
                     imageUrl: action.payload.imageUrl
             };
         case actionTypes.LOG_IN_FAIL:

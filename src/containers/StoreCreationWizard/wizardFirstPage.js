@@ -3,6 +3,7 @@ import { reduxForm, Field } from 'redux-form'
 import './storeWizard.css'
 import validate from './validate'
 
+
 import {
     SingleInput,
     FromToTimeInput,
@@ -26,7 +27,7 @@ const RenderInput = createRenderer((input, label, meta) => (
 
 
 const WizardFirstPage = (props) => (
-    <form className="flex-one-center" onSubmit={props.handleSubmit(props.submitForm)}>
+    <form className="flex-one-center" onSubmit={props.handleSubmit}>
         <Field name="storeName" label="Store Name" component={RenderInput} />
         <Field name="email" label="Email" component={RenderInput} />
         <Field name="storeAddress" label="Store Address" component={RenderInput} />
@@ -35,10 +36,10 @@ const WizardFirstPage = (props) => (
         <FromToTimeInput
             title="Store Opening Hours"
         />        
-        <div className="form-button-container">
+        {/* <div className="form-button-container">
             <LoadingButton disabled={true} propStyle={{ width: '80px', height: '40px' }} title="BACK" />
             <LoadingButton type="submit" disabled={props.submitting} propStyle={{ width: '80px', height: '40px' }} title="NEXT" />
-        </div>
+        </div> */}
 
     </form>
 )
@@ -46,7 +47,8 @@ const WizardFirstPage = (props) => (
 const WizardFirstPageForm = reduxForm({
     form: 'storeCreationWizard',
     destroyOnUnmount: false,
-    validate
+    validate,
+    onSubmit: ()=>({})
 })(WizardFirstPage)
 export default WizardFirstPageForm;
 
